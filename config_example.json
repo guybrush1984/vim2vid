@@ -1,0 +1,49 @@
+{
+  "width": 720,
+  "height": 720,
+  "fps": 24,
+  "font_size": 16,
+  "font_path": null,
+  
+  "columns": 80,
+  "rows": 30,
+  "show_greeting": true,
+  "greeting_duration": 1.5,
+  "greeting_file": null,
+  
+  "typing_speed_base": 0.08,
+  "typing_speed_variance": 0.3,
+  "burst_probability": 0.25,
+  "burst_speed": 0.03,
+  
+  "mistake_rate": 0.003,
+  "correction_pause": 0.4,
+  
+  "sentence_pause": 0.6,
+  "punctuation_pause": 0.3,
+  "space_pause": 0.12,
+  "newline_pause": 0.2,
+  
+  "color_bg": [30, 30, 30],
+  "color_text": [230, 230, 230],
+  "color_cursor": [255, 255, 255],
+  "color_tilde": [100, 150, 200],
+  "color_status": [60, 60, 60],
+  "color_highlight": [150, 200, 255],
+  "color_command": [255, 220, 120],
+  
+  "highlight_patterns": [
+    "c'est reparti",
+    "pincement au cœur",
+    "bateau ivre",
+    "bordel",
+    "merci",
+    "Merci",
+    "naturellement",
+    "J'en passe, et des meilleurs"
+  ],
+  
+  "special_sequences": {
+    "GPT-OSS-20/120b": ["GPT-OSS-117", "GPT-OSS-20/120b"]
+  }
+}
