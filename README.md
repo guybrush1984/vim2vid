@@ -2,6 +2,8 @@
 
 Generate realistic VIM typing videos from text files. Perfect for social media content.
 
+![vim2vid demo](vim2vid.gif)
+
 ## Installation
 
 ```bash
