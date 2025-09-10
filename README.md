@@ -37,7 +37,9 @@ All settings are in JSON files. Create custom configs by copying and editing the
 
 **Provided configs:**
 - `default.json` - Basic settings
-- `config_example.json` - With highlighting and special effects
+- `default_greeting.json` - Default VIM greeting messages
+- `examples/config_example.json` - With highlighting and special effects
+- `examples/greeting_example.json` - Alternative Neovim-style greeting
 
 ## Features
 
@@ -58,7 +60,7 @@ vim2vid farewell.txt linkedin.mp4
 vim2vid tutorial.py youtube.mp4 --config widescreen.json
 
 # With French phrases highlighted  
-vim2vid farewell.txt french.mp4 --config config_example.json
+vim2vid farewell.txt french.mp4 --config examples/config_example.json
 ```
 
 ## License
