@@ -6,12 +6,36 @@ Generate realistic VIM typing videos from text files. Perfect for social media c
 
 ## Installation
 
+### Option 1: Docker (Recommended)
+No installation needed! Use the pre-built Docker image:
+
+```bash
+# Create a text file and generate video in one command
+echo "Hello from vim2vid!" > yourtext.txt
+docker run --rm -v $(pwd):/folder ghcr.io/guybrush1984/vim2vid:latest /folder/yourtext.txt /folder/yourtext.mp4
+```
+
+### Option 2: Local Installation
 ```bash
 pip install -e .
 ```
 
 ## Usage
 
+### Docker Usage
+```bash
+# Quick start - create text and generate video
+echo "Your content here" > input.txt
+docker run --rm -v $(pwd):/workspace ghcr.io/guybrush1984/vim2vid:latest /workspace/input.txt /workspace/output.mp4
+
+# With custom config
+docker run --rm -v $(pwd):/workspace ghcr.io/guybrush1984/vim2vid:latest /workspace/input.txt /workspace/output.mp4 --config /workspace/examples/config_example.json
+
+# Show help and version
+docker run --rm ghcr.io/guybrush1984/vim2vid:latest --help
+```
+
+### Local Usage  
 ```bash
 # Basic usage (uses default.json)
 vim2vid input.txt output.mp4
