@@ -15,15 +15,14 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements and install Python dependencies
-COPY pyproject.toml ./
+# Copy application files first (needed for setuptools-scm to write _version.py)
+COPY vim2vid/ ./vim2vid/
+COPY pyproject.toml default.json default_greeting.json ./
+
 # Use VERSION build arg to set version for setuptools-scm
 ARG VERSION
 ENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_VIM2VID=${VERSION}
 RUN pip install --no-cache-dir -e .
-
-# Copy application files
-COPY vim2vid/ default.json default_greeting.json ./vim2vid/
 
 # Create output directory
 RUN mkdir -p /output
