@@ -20,7 +20,7 @@ COPY pyproject.toml ./
 RUN pip install --no-cache-dir -e .
 
 # Copy application files
-COPY vim2vid.py default.json default_greeting.json ./
+COPY vim2vid/ default.json default_greeting.json ./vim2vid/
 
 # Create output directory
 RUN mkdir -p /output
@@ -30,5 +30,5 @@ ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1
 
 # Default command
-ENTRYPOINT ["python", "vim2vid.py"]
+ENTRYPOINT ["vim2vid"]
 CMD ["--help"]

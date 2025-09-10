@@ -14,6 +14,12 @@ from pathlib import Path
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional, Tuple
 
+try:
+    from vim2vid._version import version as __version__
+except ImportError:
+    # Fallback for development
+    __version__ = "dev"
+
 import numpy as np
 import cv2
 from PIL import Image, ImageDraw, ImageFont
@@ -676,7 +682,7 @@ def display_config_parameters(config: VideoConfig, config_file: str) -> None:
 def main():
     """Main entry point"""
     parser = argparse.ArgumentParser(
-        description="Generate realistic VIM typing videos from text files",
+        description=f"Generate realistic VIM typing videos from text files (v{__version__})",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -725,7 +731,8 @@ Examples:
     # Set filename in VIM from input file
     config.filename_in_vim = Path(args.input).name
     
-    # Display all loaded configuration parameters
+    # Display version and configuration parameters
+    print(f"🚀 vim2vid v{__version__}")
     display_config_parameters(config, config_file)
     
     # Generate video

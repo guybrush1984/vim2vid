@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0", "wheel", "setuptools-scm>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "vim2vid"
-version = "1.0.0"
+dynamic = ["version"]
 description = "Generate realistic VIM typing videos from text files"
 readme = "README.md"
 authors = [
@@ -45,7 +45,7 @@ dev = [
 vim2vid = "vim2vid:main"
 
 [tool.setuptools]
-py-modules = ["vim2vid"]
+packages = ["vim2vid"]
 
 [project.urls]
 Homepage = "https://github.com/guybrush1984/vim2vid"
@@ -69,3 +69,6 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
+
+[tool.setuptools_scm]
+write_to = "vim2vid/_version.py"
